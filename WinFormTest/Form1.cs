@@ -13,9 +13,9 @@ namespace WinFormTest
 
         private void ctlResizeTestButton_Click(object sender, EventArgs e)
         {
-            SKImage image = File.ReadAllBytes(ctlFilePathTextBox.Text).GetSKImage();
-            SKBitmap bitmap = image.ToSKBitmap();
-            SKBitmap resizedBitmap = bitmap.Resize(1000, 1000, true, true);
+            using SKImage image = File.ReadAllBytes(ctlFilePathTextBox.Text).GetSKImage();
+            using SKBitmap bitmap = image.ToSKBitmap();
+            using SKBitmap resizedBitmap = bitmap.Resize(1000, 1000, false, true);
 
             using var stream = resizedBitmap.GetBytes().GetStream();
             ctlImagePictureBox.Image = Image.FromStream(stream);
@@ -37,11 +37,11 @@ namespace WinFormTest
         {
             var data = File.ReadAllBytes(ctlFilePathTextBox.Text);
             MessageBox.Show(data.Length.ToString());
-            SKImage image = data.GetSKImage();
-            data = image.Compress(null, 10);
+            using SKImage image = data.GetSKImage();
+            var compressedImage = image.Compress(null, 10);
+            data = compressedImage.GetBytes();
             MessageBox.Show(data.Length.ToString());
 
-            var compressedImage = data.GetSKImage();
             using var stream = compressedImage.GetBytes().GetStream();
             ctlImagePictureBox.Image = Image.FromStream(stream);
         }

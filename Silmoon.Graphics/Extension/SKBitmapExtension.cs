@@ -8,6 +8,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Silmoon.Graphics.Extension
 {
@@ -17,15 +18,13 @@ namespace Silmoon.Graphics.Extension
         public static SKBitmap Resize(this SKBitmap bitmap, int width, int height)
         {
             var resizedBitmap = new SKBitmap(width, height);
-            using (var canvas = new SKCanvas(resizedBitmap))
+            using var canvas = new SKCanvas(resizedBitmap);
+            using var paint = new SKPaint
             {
-                var paint = new SKPaint
-                {
-                    FilterQuality = SKFilterQuality.High,
-                    IsAntialias = true
-                };
-                canvas.DrawBitmap(bitmap, new SKRect(0, 0, width, height), paint);
-            }
+                FilterQuality = SKFilterQuality.High,
+                IsAntialias = true
+            };
+            canvas.DrawBitmap(bitmap, new SKRect(0, 0, width, height), paint);
             return resizedBitmap;
         }
         // 调整大小
@@ -56,15 +55,13 @@ namespace Silmoon.Graphics.Extension
 
             // 创建目标大小的 SKBitmap
             var resizedBitmap = new SKBitmap(width, height);
-            using (var canvas = new SKCanvas(resizedBitmap))
+            using var canvas = new SKCanvas(resizedBitmap);
+            using var paint = new SKPaint
             {
-                var paint = new SKPaint
-                {
-                    FilterQuality = SKFilterQuality.High,
-                    IsAntialias = true
-                };
-                canvas.DrawBitmap(bitmap, new SKRect(0, 0, width, height), paint);
-            }
+                FilterQuality = SKFilterQuality.High,
+                IsAntialias = true
+            };
+            canvas.DrawBitmap(bitmap, new SKRect(0, 0, width, height), paint);
             return resizedBitmap;
         }
 
@@ -91,28 +88,12 @@ namespace Silmoon.Graphics.Extension
             return bitmap.Resize(width, height);
         }
 
-        // 修复 iPhone 照片方向
-        public static SKBitmap FixiPhoneOrientation(this SKBitmap bitmap)
-        {
-            var orientation = bitmap.GetOrientation();
-            if (orientation == SKEncodedOrigin.TopLeft) return bitmap;
-
-            return orientation switch
-            {
-                SKEncodedOrigin.RightTop => bitmap.Rotate(90),
-                SKEncodedOrigin.BottomRight => bitmap.Rotate(180),
-                SKEncodedOrigin.LeftBottom => bitmap.Rotate(270),
-                _ => bitmap
-            };
-        }
 
         // 获取 SKBitmap 的字节数组
-        public static byte[] GetBytes(this SKBitmap bitmap, SKEncodedImageFormat imageFormat = SKEncodedImageFormat.Png, int quality = 100)
+        public static byte[] GetBytes(this SKBitmap bitmap)
         {
-            using (var image = SKImage.FromBitmap(bitmap))
-            {
-                return image.Encode(imageFormat, quality).ToArray();
-            }
+            using var image = SKImage.FromBitmap(bitmap);
+            return image.GetBytes();
         }
 
         // 从 byte[] 创建 SKBitmap
@@ -121,23 +102,14 @@ namespace Silmoon.Graphics.Extension
         // 将 SKBitmap 转换为 SKImage
         public static SKImage ToSKImage(this SKBitmap bitmap) => SKImage.FromBitmap(bitmap);
 
-        // 辅助方法：获取方向
-        private static SKEncodedOrigin GetOrientation(this SKBitmap bitmap)
-        {
-            // 占位符，需实现 EXIF 读取以确定图像实际方向
-            return SKEncodedOrigin.TopLeft;
-        }
-
         // 辅助方法：旋转
         public static SKBitmap Rotate(this SKBitmap bitmap, float degrees)
         {
             var rotatedBitmap = new SKBitmap(bitmap.Height, bitmap.Width);
-            using (var canvas = new SKCanvas(rotatedBitmap))
-            {
-                canvas.Translate(rotatedBitmap.Width / 2f, rotatedBitmap.Height / 2f);
-                canvas.RotateDegrees(degrees);
-                canvas.DrawBitmap(bitmap, -bitmap.Width / 2f, -bitmap.Height / 2f);
-            }
+            using var canvas = new SKCanvas(rotatedBitmap);
+            canvas.Translate(rotatedBitmap.Width / 2f, rotatedBitmap.Height / 2f);
+            canvas.RotateDegrees(degrees);
+            canvas.DrawBitmap(bitmap, -bitmap.Width / 2f, -bitmap.Height / 2f);
             return rotatedBitmap;
         }
     }
