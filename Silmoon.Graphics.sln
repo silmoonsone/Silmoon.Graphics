@@ -14,7 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决�
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormTest", "WinFormTest\WinFormTest.csproj", "{02F000DB-8A86-49DF-8021-605334856E72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silmoon.Graphics.Financial", "Silmoon.Graphics.Financial\Silmoon.Graphics.Financial.csproj", "{9AE6D62A-14D2-4FBD-918C-1D8E4A598567}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsWinFormTesting", "GraphicsWinFormTesting\GraphicsWinFormTesting.csproj", "{E65D7C3F-28A2-4231-81CD-79E32C6E0E81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,13 +30,20 @@ Global
 		{F2C95DE0-81C8-4426-9360-94636969F3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2C95DE0-81C8-4426-9360-94636969F3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2C95DE0-81C8-4426-9360-94636969F3C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02F000DB-8A86-49DF-8021-605334856E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02F000DB-8A86-49DF-8021-605334856E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02F000DB-8A86-49DF-8021-605334856E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02F000DB-8A86-49DF-8021-605334856E72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE6D62A-14D2-4FBD-918C-1D8E4A598567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE6D62A-14D2-4FBD-918C-1D8E4A598567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE6D62A-14D2-4FBD-918C-1D8E4A598567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE6D62A-14D2-4FBD-918C-1D8E4A598567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65D7C3F-28A2-4231-81CD-79E32C6E0E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65D7C3F-28A2-4231-81CD-79E32C6E0E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65D7C3F-28A2-4231-81CD-79E32C6E0E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65D7C3F-28A2-4231-81CD-79E32C6E0E81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E65D7C3F-28A2-4231-81CD-79E32C6E0E81} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31B2EE68-33A6-4753-AAE9-D3AB6F7C936B}

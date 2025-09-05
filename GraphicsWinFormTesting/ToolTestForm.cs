@@ -2,11 +2,11 @@ using Silmoon.Extension;
 using Silmoon.Graphics.Extension;
 using SkiaSharp;
 
-namespace WinFormTest
+namespace GraphicsWinFormTesting
 {
-    public partial class Form1 : Form
+    public partial class ToolTestForm : Form
     {
-        public Form1()
+        public ToolTestForm()
         {
             InitializeComponent();
         }

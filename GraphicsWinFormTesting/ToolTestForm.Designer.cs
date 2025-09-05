@@ -1,6 +1,6 @@
-﻿namespace WinFormTest
+﻿namespace GraphicsWinFormTesting
 {
-    partial class Form1
+    partial class ToolTestForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -82,7 +82,7 @@
             ctlCompressTestButton.UseVisualStyleBackColor = true;
             ctlCompressTestButton.Click += ctlCompressTestButton_Click;
             // 
-            // Form1
+            // ToolTestForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -92,7 +92,7 @@
             Controls.Add(ctlFilePathTextBox);
             Controls.Add(ctlResizeTestButton);
             Controls.Add(ctlImagePictureBox);
-            Name = "Form1";
+            Name = "ToolTestForm";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)ctlImagePictureBox).EndInit();
             ResumeLayout(false);

@@ -2,14 +2,21 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>annotations</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Silmoon.Graphics.Financial\Silmoon.Graphics.Financial.csproj" />
     <ProjectReference Include="..\Silmoon.Graphics\Silmoon.Graphics.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ToolTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
