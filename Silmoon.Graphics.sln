@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsWinFormTesting", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsMauiTesting", "GraphicsMauiTesting\GraphicsMauiTesting.csproj", "{427F7A5E-0C52-4F24-BDB1-29EAFADFB391}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "支撑框架", "支撑框架", "{64B9E904-E34A-4356-8E0A-FC8E459DA9E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silmoon.Maui", "..\Silmoon.Maui\Silmoon.Maui\Silmoon.Maui.csproj", "{00283845-7A22-5C41-CE29-798E0A8AC569}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{427F7A5E-0C52-4F24-BDB1-29EAFADFB391}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{427F7A5E-0C52-4F24-BDB1-29EAFADFB391}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{427F7A5E-0C52-4F24-BDB1-29EAFADFB391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00283845-7A22-5C41-CE29-798E0A8AC569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00283845-7A22-5C41-CE29-798E0A8AC569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00283845-7A22-5C41-CE29-798E0A8AC569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00283845-7A22-5C41-CE29-798E0A8AC569}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E65D7C3F-28A2-4231-81CD-79E32C6E0E81} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{427F7A5E-0C52-4F24-BDB1-29EAFADFB391} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{00283845-7A22-5C41-CE29-798E0A8AC569} = {64B9E904-E34A-4356-8E0A-FC8E459DA9E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31B2EE68-33A6-4753-AAE9-D3AB6F7C936B}

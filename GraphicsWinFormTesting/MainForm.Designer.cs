@@ -48,7 +48,7 @@
             ctlFinancialKLineButton.Name = "ctlFinancialKLineButton";
             ctlFinancialKLineButton.Size = new Size(75, 23);
             ctlFinancialKLineButton.TabIndex = 1;
-            ctlFinancialKLineButton.Text = "金融K线图";
+            ctlFinancialKLineButton.Text = "金融K线图(&C)";
             ctlFinancialKLineButton.UseVisualStyleBackColor = true;
             ctlFinancialKLineButton.Click += ctlFinancialKLineButton_Click_1;
             // 

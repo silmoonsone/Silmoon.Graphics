@@ -4,11 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:GraphicsMauiTesting"
+    xmlns:pages="clr-namespace:GraphicsMauiTesting.Pages"
     Title="GraphicsMauiTesting">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!--<ShellContent Title="Home" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />-->
+    <!--<ShellContent Title="CandleChart" ContentTemplate="{DataTemplate pages:ActionableCandleChartPage}" Route="CandleChart" />-->
+    <TabBar>
+        <Tab Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Title="Candle Chart">
+            <ShellContent ContentTemplate="{DataTemplate pages:ActionableCandleChartPage}" />
+        </Tab>
+    </TabBar>
 
 </Shell>
