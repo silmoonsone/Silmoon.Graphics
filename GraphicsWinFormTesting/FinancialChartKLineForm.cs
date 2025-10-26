@@ -21,8 +21,7 @@ namespace GraphicsWinFormTesting
             _chart = new ActionableCandleChart(1, pictureBox1.Width, pictureBox1.Height);
             _chart.FrameRefreshed(frame =>
             {
-                using var image = SKImage.FromBitmap(_chart.Bitmap);
-                using var data = image.Encode(SKEncodedImageFormat.Png, 100);
+                using var data = frame.Encode(SKEncodedImageFormat.Png, 100);
                 var stream = data.AsStream();
                 var bitmap = new Bitmap(stream);
                 Invoke(() =>
@@ -65,7 +64,6 @@ namespace GraphicsWinFormTesting
         private void FinancialChartKLineForm_Resize(object sender, EventArgs e)
         {
             UpdateChartSize();
-            RefreshChart();
         }
     }
 }

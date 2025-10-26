@@ -60,6 +60,7 @@ namespace Silmoon.Graphics.Financial
             Height = height;
             Bitmap?.Dispose();
             Bitmap = new SKBitmap(Width, Height);
+            RefreshFrame();
         }
 
         /// <summary>
@@ -115,8 +116,14 @@ namespace Silmoon.Graphics.Financial
                 CalculateFps();
                 DrawFps(canvas);
 
-                OnFrameRefreshed?.Invoke(Bitmap);
-                _drawingLock = false;
+                try
+                {
+                    OnFrameRefreshed?.Invoke(Bitmap);
+                }
+                finally
+                {
+                    _drawingLock = false;
+                }
                 return Bitmap;
             }
         }

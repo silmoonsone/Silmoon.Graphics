@@ -6,7 +6,7 @@
              x:Class="GraphicsMauiTesting.Pages.ActionableCandleChartPage"
              Title="ActionableCandleChartPage">
     <VerticalStackLayout x:Name="RootLayout">
-        <Image Source="{Binding ImageStream, Converter={StaticResource StreamToImageSourceConverter}}" />
+        <Image Source="{Binding ImageStream, Converter={StaticResource StreamToImageSourceConverter}}" SizeChanged="Image_SizeChanged" x:Name="nameImage" x:FieldModifier="public" />
         <Line X1="0" Y1="0" X2="{Binding Width, Source={x:Reference RootLayout}}" Y2="0" Stroke="LightGray" StrokeThickness="1" HeightRequest="1" HorizontalOptions="Fill" />
         <Button Text="refresh" Command="{Binding RefreshImageCommand}"></Button>
     </VerticalStackLayout>
