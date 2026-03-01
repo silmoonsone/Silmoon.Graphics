@@ -1,6 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Silmoon.Extension;
+using Silmoon.Extensions;
 using Silmoon.Graphics.Financial;
 using SkiaSharp;
 

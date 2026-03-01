@@ -1,4 +1,4 @@
-﻿using Silmoon.Extension;
+﻿using Silmoon.Extensions;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
