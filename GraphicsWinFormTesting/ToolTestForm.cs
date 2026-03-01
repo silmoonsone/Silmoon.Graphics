@@ -1,5 +1,5 @@
 using Silmoon.Extensions;
-using Silmoon.Graphics.Extension;
+using Silmoon.Graphics.Extensions;
 using SkiaSharp;
 
 namespace GraphicsWinFormTesting
